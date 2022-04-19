@@ -4,7 +4,12 @@ class MyDocument extends Document {
 	render() {
 		return (
 			<Html className="pr-11 pl-11 lg:mr-96 lg:ml-96">
-				<Head></Head>
+				<Head>
+					<meta
+						name="description"
+						content="Hoku Ishibe's personal blog"
+					/>
+				</Head>
 				<header className="my-8">
 					<a href="/">
 						<p className="text-5xl font-bold">hokuishi.be</p>
