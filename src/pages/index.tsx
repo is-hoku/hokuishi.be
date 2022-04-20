@@ -30,10 +30,14 @@ const Index: NextPage<Props> = ({ allPosts }) => {
 			</div>
 			{allPosts.map((post) => (
 				<div className="my-12">
-					<a href={"blog/" + post.slug} key={post.slug}>
+					<a
+						href={"blog/" + post.slug}
+						key={post.slug}
+						className="hover:underline"
+					>
 						<h2 className="text-3xl">{post.title}</h2>
-						<p className="text-xl pt-3">{post.date}</p>
 					</a>
+					<p className="text-xl pt-3">{post.date}</p>
 				</div>
 			))}
 		</>
