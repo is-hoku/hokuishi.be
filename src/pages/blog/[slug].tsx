@@ -4,8 +4,18 @@ import ErrorPage from "next/error";
 import Head from "next/head";
 import { getAllPosts, getPostBySlug } from "src/lib/blog";
 import markdownToHTML from "src/lib/markdownToHTML";
+import { useEffect } from "react";
+import hljs from "highlight.js/lib/core";
+import "highlight.js/styles/base16/dracula.css";
+import typescript from "highlight.js/lib/languages/typescript";
+import go from "highlight.js/lib/languages/go";
+import bash from "highlight.js/lib/languages/bash";
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
+
+hljs.registerLanguage("typescript", typescript);
+hljs.registerLanguage("go", go);
+hljs.registerLanguage("bash", bash);
 
 export const getStaticPaths = async () => {
 	const posts = getAllPosts(["slug"]);
@@ -44,6 +54,9 @@ const Post: NextPage<Props> = ({ post }) => {
 	if (!router.isFallback && !post?.slug) {
 		return <ErrorPage statusCode={404} />;
 	}
+	useEffect(() => {
+		hljs.highlightAll();
+	}, [hljs]);
 	return (
 		<>
 			<Head>
@@ -58,10 +71,9 @@ const Post: NextPage<Props> = ({ post }) => {
 				<div>
 					<p className="text-center mt-3 mb-11">{post.date}</p>
 					<div
-						className="max-w-none prose prose-h1:text-cyan prose-h2:text-cyan prose-h3:text-cyan prose-h4:text-cyan prose-p:text-cyan prose-a:text-blue prose-blockquote:text-cyan prose-figure:text-cyan prose-figcaption:text-cyan prose-strong:text-cyan prose-em:text-cyan prose-code:text-cyan prose-pre:text-cyan prose-ol:text-cyan prose-ul:text-cyan prose-li:text-cyan prose-li:marker:text-cyan prose-table:text-cyan prose-thead:text-cyan prose-tr:text-cyan prose-th:text-cyan prose-td:text-cyan prose-img:text-cyan prose-video:text-cyan prose-hr:text-cyan prose-strong:font-bold"
+						className="text-cyan max-w-none prose prose-h1:text-cyan prose-h2:text-cyan prose-h3:text-cyan prose-h4:text-cyan prose-p:text-cyan prose-a:text-blue prose-blockquote:text-cyan prose-figure:text-cyan prose-figcaption:text-cyan prose-strong:text-cyan prose-em:text-cyan prose-code:text-cyan prose-pre:text-cyan prose-pre:bg-zinc prose-ol:text-cyan prose-ul:text-cyan prose-li:text-cyan prose-li:marker:text-cyan prose-table:text-cyan prose-thead:text-cyan prose-tr:text-cyan prose-th:text-cyan prose-td:text-cyan prose-img:text-cyan prose-video:text-cyan prose-hr:text-cyan prose-strong:font-bold prose-p:text-lg"
 						dangerouslySetInnerHTML={{ __html: post.content }}
 					/>
-					<p>{post.content}</p>
 				</div>
 			</article>
 		</>

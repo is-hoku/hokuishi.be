@@ -17,6 +17,7 @@ module.exports = {
 			magenta: "#af87d7",
 			cyan: "#ffd7ff", // foreground
 			white: "#ffffd7",
+			zinc: "#282936", // source code background
 		},
 	},
 	plugins: [require("@tailwindcss/typography")],
