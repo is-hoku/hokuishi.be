@@ -23,23 +23,20 @@ const Index: NextPage<Props> = ({ allPosts }) => {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 
-			<div className="z-10 flex flex-col justify-center">
-				<h1 className="text-xl font-bold my-3">
-					[blog@hokuishi.be:~]$ ls posts
-				</h1>
+			<div className="mt-32">
+				{allPosts.map((post) => (
+					<div className="my-12">
+						<a
+							href={"blog/" + post.slug}
+							key={post.slug}
+							className="hover:underline"
+						>
+							<h2 className="text-3xl">{post.title}</h2>
+						</a>
+						<p className="text-xl pt-3">{post.date}</p>
+					</div>
+				))}
 			</div>
-			{allPosts.map((post) => (
-				<div className="my-12">
-					<a
-						href={"blog/" + post.slug}
-						key={post.slug}
-						className="hover:underline"
-					>
-						<h2 className="text-3xl">{post.title}</h2>
-					</a>
-					<p className="text-xl pt-3">{post.date}</p>
-				</div>
-			))}
 		</>
 	);
 };

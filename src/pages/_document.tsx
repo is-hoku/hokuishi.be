@@ -10,16 +10,18 @@ class MyDocument extends Document {
 						content="Hoku Ishibe's personal blog"
 					/>
 				</Head>
-				<header className="my-8">
-					<a href="/">
-						<p className="text-5xl font-bold">hokuishi.be</p>
-					</a>
-				</header>
-				<body className="bg-black text-cyan">
-					<Main />
-					<NextScript />
-				</body>
-				<div className="my-40"></div>
+				<div className="min-h-screen">
+					<header className="my-8">
+						<a href="/">
+							<p className="text-5xl font-bold">hokuishi.be</p>
+						</a>
+					</header>
+					<body className="bg-black text-cyan">
+						<Main />
+						<NextScript />
+					</body>
+					<div className="my-40"></div>
+				</div>
 				<footer className="flex justify-center my-4 py-8 border-t border-blue">
 					<div className="grid-rows-2">
 						<div className="grid-span-1 flex justify-around">
