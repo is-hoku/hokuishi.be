@@ -71,7 +71,7 @@ const Post: NextPage<Props> = ({ post }) => {
 				<div>
 					<p className="text-center mt-3 mb-11">{post.date}</p>
 					<div
-						className="text-cyan max-w-none prose prose-h1:text-cyan prose-h2:text-cyan prose-h3:text-cyan prose-h4:text-cyan prose-p:text-cyan prose-a:text-blue prose-a:no-underline prose-blockquote:text-cyan prose-figure:text-cyan prose-figcaption:text-cyan prose-strong:text-cyan prose-em:text-cyan prose-code:text-cyan prose-code:rounded prose-code:bg-zinc prose-code:before:text-zinc prose-code:after:text-zinc prose-pre:text-cyan prose-pre:bg-zinc prose-ol:text-cyan prose-ul:text-cyan prose-li:text-cyan prose-li:marker:text-cyan prose-table:text-cyan prose-thead:text-cyan prose-tr:text-cyan prose-th:text-cyan prose-td:text-cyan prose-img:text-cyan prose-video:text-cyan prose-hr:text-cyan prose-strong:font-bold prose-p:text-lg"
+						className="text-cyan text-lg max-w-none prose prose-h1:text-cyan prose-h2:text-cyan prose-h3:text-cyan prose-h4:text-cyan prose-p:text-cyan prose-a:text-blue prose-a:no-underline prose-blockquote:text-cyan prose-figure:text-cyan prose-figcaption:text-cyan prose-strong:text-cyan prose-em:text-cyan prose-code:text-cyan prose-code:rounded prose-code:bg-zinc prose-code:before:text-zinc prose-code:after:text-zinc prose-pre:text-cyan prose-pre:bg-zinc prose-ol:text-cyan prose-ul:text-cyan prose-li:text-cyan prose-li:marker:text-cyan prose-table:text-cyan prose-thead:text-cyan prose-tr:text-cyan prose-th:text-cyan prose-td:text-cyan prose-img:text-cyan prose-video:text-cyan prose-hr:text-cyan prose-strong:font-bold"
 						dangerouslySetInnerHTML={{ __html: post.content }}
 					/>
 				</div>
