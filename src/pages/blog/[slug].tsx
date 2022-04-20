@@ -10,12 +10,14 @@ import "highlight.js/styles/base16/dracula.css";
 import typescript from "highlight.js/lib/languages/typescript";
 import go from "highlight.js/lib/languages/go";
 import bash from "highlight.js/lib/languages/bash";
+import vim from "highlight.js/lib/languages/vim";
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
 hljs.registerLanguage("typescript", typescript);
 hljs.registerLanguage("go", go);
 hljs.registerLanguage("bash", bash);
+hljs.registerLanguage("vim", vim);
 
 export const getStaticPaths = async () => {
 	const posts = getAllPosts(["slug"]);
