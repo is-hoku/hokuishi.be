@@ -6,7 +6,7 @@ import { getAllPosts, getPostBySlug } from "src/lib/blog";
 import markdownToHTML from "src/lib/markdownToHTML";
 import { useEffect } from "react";
 import hljs from "highlight.js/lib/core";
-import "highlight.js/styles/base16/dracula.css";
+import "highlight.js/styles/base16/ocean.css";
 import typescript from "highlight.js/lib/languages/typescript";
 import go from "highlight.js/lib/languages/go";
 import bash from "highlight.js/lib/languages/bash";
