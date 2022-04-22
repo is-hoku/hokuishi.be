@@ -2,6 +2,7 @@
 title: "Mac のセットアップ"
 date: "2021/10/03"
 slug: "setup_mac"
+description: "最近二度 Mac のセットアップをして、毎回結構時間が取られるので dotfiles を作りました。  Mac が手元に来たらやることのメモです。"
 ---
 
 最近二度 Mac のセットアップをして、毎回結構時間が取られるので [dotfiles](https://github.com/is-hoku/mac-dotfiles) を作りました。1 回目で作らなかったことを後悔しました。以下、Mac が手元に来たらやること。

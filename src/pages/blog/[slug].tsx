@@ -38,6 +38,7 @@ export const getStaticProps = async ({ params }: any) => {
 		"slug",
 		"title",
 		"date",
+		"description",
 		"content",
 	]);
 	const content = await markdownToHTML(post.content);
@@ -63,10 +64,7 @@ const Post: NextPage<Props> = ({ post }) => {
 		<>
 			<Head>
 				<title>{post.title + " | hokuishi.be"}</title>
-				<meta
-					name="description"
-					content="Hoku Ishibe's personal blog"
-				/>
+				<meta name="description" content={post.description} />
 			</Head>
 			<article>
 				<h1 className="text-4xl text-center mt-20">{post.title}</h1>

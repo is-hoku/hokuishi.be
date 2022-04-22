@@ -25,7 +25,7 @@ const Index: NextPage<Props> = ({ allPosts }) => {
 
 			<div className="mt-32">
 				{allPosts.map((post) => (
-					<div className="my-12">
+					<div className="my-12" key={post.slug}>
 						<a
 							href={"blog/" + post.slug}
 							key={post.slug}
