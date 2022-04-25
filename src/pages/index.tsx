@@ -5,7 +5,7 @@ import { getAllPosts } from "src/lib/blog";
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
 export const getStaticProps = async () => {
-	const allPosts = getAllPosts(["slug", "title", "date", "tags"]);
+	const allPosts = getAllPosts(["slug", "title", "date"]);
 	return {
 		props: { allPosts },
 	};
