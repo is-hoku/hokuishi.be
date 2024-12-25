@@ -155,7 +155,7 @@ pre,
 code {
   all: unset;
   font-size: 0.9em;
-  font-family: "JetBrains Mono";
+  font-family: "JetBrains Mono Variable";
 }
 mark {
   background-color: var(--header-background);
