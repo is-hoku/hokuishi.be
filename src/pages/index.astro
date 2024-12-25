@@ -1,0 +1,41 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<div class="wrapper">
+		<Header />
+		<main>
+			<p class="title">hokuishi.be</p>
+			<p class="subtitle">Hoku Ishibe's Personal Website</p>
+		</main>
+		<Footer />
+		</div>
+	</body>
+</html>
+<style>
+	main {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+	}
+	.title {
+		font-family: 'JetBrains Mono';
+		font-size: 2.8em;
+		margin-bottom: 0em;
+	}
+	.subtitle {
+		color: var(--accent);
+		margin-top: 0em;
+	}
+</style>

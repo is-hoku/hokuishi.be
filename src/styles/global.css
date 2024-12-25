@@ -1,0 +1,185 @@
+/*
+  The CSS in this style tag is based off of Bear Blog's default CSS.
+  https://github.com/HermanMartinus/bearblog/blob/297026a877bc2ab2b3bdfbd6b9f7961c350917dd/templates/styles/blog/default.css
+  License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
+ */
+
+:root {
+  --accent: #a48b75;
+  --header-background: #f8f2e6;
+  --footer-background: #f8f5f2;
+  --background: #fdfbf7;
+  --foreground: #3f3740;
+  --gray: #d9d9d9;
+  --white: #ffffff;
+  --blockquote-background: #f8f5f2;
+  --blockquote-foreground: #d7c8b7;
+  --border: #edd8c5;
+}
+
+
+html, body {
+  font-family: "Spectral", "Zen Old Mincho";
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  background: var(--background);
+  background-size: 100% 600px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  color: var(--foreground);
+  font-size: 20px;
+  line-height: 1.5;
+  height: 100%;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+main {
+  width: 720px;
+  max-width: calc(100% - 2em);
+  margin: auto;
+  padding: 3em 1em;
+  flex: 1;
+}
+strong,
+b {
+  font-weight: 700;
+}
+a {
+  color: var(--accent);
+}
+a:hover {
+  color: var(--accent);
+}
+p {
+  font-size: 0.9em;
+  color: var(--foreground);
+}
+.prose p {
+  margin-bottom: 1em;
+}
+textarea {
+  width: 100%;
+  font-size: 16px;
+}
+input {
+  font-size: 16px;
+}
+table {
+  width: 100%;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+hr {
+  border: none;
+  border-top: 1px solid var(--accent);
+}
+@media (max-width: 720px) {
+  body {
+    font-size: 18px;
+  }
+  main {
+    padding: 1em;
+  }
+}
+
+.sr-only {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  /* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
+  clip: rect(1px 1px 1px 1px);
+  /* maybe deprecated but we need to support legacy browsers */
+  clip: rect(1px, 1px, 1px, 1px);
+  /* modern browsers, clip-path works inwards from each corner */
+  clip-path: inset(50%);
+  /* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
+  white-space: nowrap;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 2rem 0 1rem 0;
+  color: var(--foreground);
+  line-height: 1.2;
+  padding-left: 15px;
+  border-left: 8px solid var(--gray);
+}
+h1 {
+  font-size: 2em;
+}
+h2 {
+  font-size: 1.5em;
+}
+h3 {
+  font-size: 1.25em;
+}
+h4 {
+  font-size: 0.9em;
+}
+h5 {
+  font-size: 0.8em;
+}
+h6 {
+  font-size: 0.5em;
+}
+blockquote {
+  font-style: italic;
+  border-left: 4px solid var(--blockquote-foreground);
+  margin: 1em 0;
+  padding: 0.5em 1em;
+  background: var(--blockquote-background);
+}
+pre code {
+  display: block;
+  background: var(--foreground);
+  color: var(--white);
+  border-radius: 5px;
+  font-size: 0.7em;
+  padding: 0.5em;
+  margin: 1em 0 1em 0;
+  overflow-x: auto;
+  white-space: pre;
+  padding: 1.5em;
+}
+pre,
+code {
+  all: unset;
+  font-size: 0.9em;
+  font-family: "JetBrains Mono";
+}
+mark {
+  background-color: var(--header-background);
+  color: #3f3740;
+  border-radius: 3px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2em 0;
+}
+th, td {
+  padding: 1em;
+  border: 1px solid var(--border);
+  text-align: left;
+}
+th {
+  background-color: var(--header-background);
+  color: var(--foreground);
+  font-weight: bold;
+}
+tr:nth-child(even) {
+  background-color: var(--footer-background);
+}
+li {
+  font-size: 0.9em;
+}

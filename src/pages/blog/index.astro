@@ -1,0 +1,88 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
+import { getCollection } from 'astro:content';
+import FormattedDate from '../../components/FormattedDate.astro';
+
+const posts = (await getCollection('blog')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<style>
+			main {
+				width: 960px;
+			}
+			.prose {
+				width: 640px;
+				max-width: calc(100% - 2em);
+				margin: auto;
+				padding: 1em;
+			}
+			.title {
+				margin-bottom: 3em;
+				padding: 1em 0;
+				text-align: center;
+				line-height: 1;
+			}
+			.title p {
+				margin: 0 0 0.4em 0;
+				font-size: 2em;
+			}
+			.subtitle {
+				color: var(--accent);
+				font-size: 0.9em;
+			}
+			.prose a {
+				text-decoration: none;
+				align-items: center;
+			}
+			.post-title {
+				padding-left: 15px;
+				font-size: 1.5em;
+				margin: 1.3em 0 0 0;
+			}
+			.post-date {
+				padding-left: 15px;
+				margin: 0 0 1.9em 0;
+				color: var(--accent);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wrapper">
+		<Header />
+		<main>
+			<section>
+				<div class="prose">
+					<div class="title">
+						<p>Blog</p>
+						<div class="subtitle">
+							Secondary Storage for My Brain
+						</div>
+					</div>
+					{
+						posts.map((post) => (
+								<hr>
+								<a href={`/blog/${post.id}/`}>
+									<p class="post-title">{post.data.title}</p>
+									<p class="post-date">
+										<FormattedDate date={post.data.pubDate} />
+									</p>
+								</a>
+						))
+					}
+					<hr>
+				</div>
+			</section>
+		</main>
+		<Footer />
+		</div>
+	</body>
+</html>
