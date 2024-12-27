@@ -82,7 +82,7 @@ const {tag, posts} = Astro.props;
 					{
 						posts.map((post) => (
 								<hr>
-								<a href={`/blog/${post.id}/`}>
+								<a href={`/blog/${post.id}`}>
 									<p class="post-title">{post.data.title}</p>
 									<p class="post-date">
 										<FormattedDate date={post.data.pubDate} />
