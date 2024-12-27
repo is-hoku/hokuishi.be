@@ -6,7 +6,7 @@ tags: ['go', 'goa', 'web']
 ---
 
 この記事は[フラー株式会社 Advent Calendar 2022](https://qiita.com/advent-calendar/2022/fuller-inc)の 15 日目の記事です。  
-14 日目 の記事は [@is_hoku](https://hokuishi.be/me) で「[Goa v3 の気をつけポイント](https://hokuishi.be/blog/goav3_points)」でした。
+14 日目 の記事は [@is-hoku](https://hokuishi.be/about) で「[Goa v3 の気をつけポイント](https://hokuishi.be/blog/goav3-points)」でした。
 
 ## はじめに
 

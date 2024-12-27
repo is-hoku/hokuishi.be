@@ -140,4 +140,4 @@ Goa v1 から v3 への変更は DSL や生成結果に大きな変更があり�
 -   [goa.design](https://goa.design/)
 -   [Goa v1 や Goa v2 から v3 にアップグレードする - goa.design](https://goa.design/ja/learn/upgrading/)
 
-15 日目 の記事は [@is_hoku](https://hokuishi.be/me) で「[Goa と sqlc, Atlas で快適な Web API サーバ開発](https://hokuishi.be/blog/develop_apiserver_with_goa)」です！
+15 日目 の記事は [@is-hoku](https://hokuishi.be/about) で「[Goa と sqlc, Atlas で快適な Web API サーバ開発](https://hokuishi.be/blog/develop-apiserver-with-goa)」です！
