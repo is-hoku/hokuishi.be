@@ -75,6 +75,13 @@ img {
   max-width: 100%;
   height: auto;
   border-radius: 8px;
+  display: block;
+  margin: 0 auto;
+}
+figcaption {
+  caption-side: bottom;
+  font-size: 0.8em;
+  text-align: center;
 }
 hr {
   border: none;

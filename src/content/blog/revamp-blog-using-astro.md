@@ -1,7 +1,7 @@
 ---
 title: 'Astroでブログを改修した'
 description: 'Astroでブログを改修した．'
-tags: ['tech', 'web', 'astro']
+tags: ['web', 'astro']
 pubDate: '2024/12/25'
 ---
 

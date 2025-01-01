@@ -110,7 +110,7 @@ const { title, subtitle, description, tags, pubDate, updatedDate } = Astro.props
 						<div class="tags">
 							{
 							tags ? tags.map(tag => (
-								<span class="tag"><a class="tag-link" href={`/tags/${tag}/`}>#{tag}</a></span>
+								<span class="tag"><a class="tag-link" href={`/tags/${tag}`}>#{tag}</a></span>
 							)): (
 									<div class="empty-tags"></div>
 								)
