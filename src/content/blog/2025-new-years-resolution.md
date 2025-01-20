@@ -59,6 +59,9 @@ GPA は高ければ高いほど良い．
 - [ ] FPGA で何か開発する
 - [ ] WebAssembly のランタイムを実装する
 - [ ] Neovim のプラグインを作る
+- [ ] GitHub Contributions 1000 以上
+- [ ] GitHub Contributions 500 以上
+- [ ] GitHub Contributions 300 以上
 - [ ] 月 1 本以上技術ブログを書く
 - [ ] 5 本以上技術ブログを書く
 - [ ] 3 本以上技術ブログを書く
