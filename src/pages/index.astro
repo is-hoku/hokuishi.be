@@ -14,8 +14,9 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		<div class="wrapper">
 		<Header />
 		<main>
-			<p class="title">hokuishi.be</p>
-			<p class="subtitle">Hoku Ishibe's Personal Website</p>
+			<img class="avatar" src="/photograph_500x500.jpg" alt="Hoku Ishibe" />
+			<p class="title">Hoku Ishibe</p>
+			<p class="subtitle">Graduate student at Toyohashi University of Technology studying computer architecture.</p>
 		</main>
 		<Footer />
 		</div>
@@ -29,8 +30,21 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		align-items: center;
 		text-align: center;
 	}
+	.avatar {
+		width: 200px;
+		height: 200px;
+		border-radius: 50%;
+		object-fit: cover;
+		margin: 0 auto 0;
+		display: block;
+	}
+	.name {
+		font-size: 1.2em;
+		font-weight: 600;
+		margin: 0 0 0.2em;
+		color: var(--foreground);
+	}
 	.title {
-		font-family: 'JetBrains Mono Variable';
 		font-size: 2.8em;
 		margin-bottom: 0em;
 	}
