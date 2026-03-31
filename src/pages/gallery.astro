@@ -64,7 +64,6 @@ const photos = [
   <div id="modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
     <div class="modal-backdrop"></div>
     <div class="modal-content">
-      <button id="modal-close" class="modal-close" aria-label="閉じる">&times;</button>
       <img id="modal-img" src="" alt="" />
       <div class="modal-info">
         <p id="modal-title" class="modal-title"></p>
@@ -81,7 +80,6 @@ const photos = [
   const modalImg = document.getElementById('modal-img');
   const modalTitle = document.getElementById('modal-title');
   const modalMeta = document.getElementById('modal-meta');
-  const modalClose = document.getElementById('modal-close');
   const backdrop = modal.querySelector('.modal-backdrop');
 
   function openModal(index) {
@@ -98,7 +96,6 @@ const photos = [
     modal.setAttribute('aria-hidden', 'false');
     modal.classList.add('is-open');
     document.body.style.overflow = 'hidden';
-    modalClose.focus();
   }
 
   function closeModal() {
@@ -111,7 +108,6 @@ const photos = [
     card.addEventListener('click', () => openModal(Number(card.dataset.index)));
   });
 
-  modalClose.addEventListener('click', closeModal);
   backdrop.addEventListener('click', closeModal);
 
   document.addEventListener('keydown', (e) => {
@@ -226,26 +222,4 @@ const photos = [
     color: var(--accent);
   }
 
-  .modal-close {
-    position: absolute;
-    top: 0.6em;
-    right: 0.75em;
-    background: rgba(0, 0, 0, 0.45);
-    border: none;
-    color: #fff;
-    font-size: 1.4em;
-    line-height: 1;
-    width: 2em;
-    height: 2em;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 2;
-  }
-
-  .modal-close:hover {
-    background: rgba(0, 0, 0, 0.7);
-  }
 </style>
