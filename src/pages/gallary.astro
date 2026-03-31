@@ -1,0 +1,251 @@
+---
+import Layout from '../layouts/BlogPost.astro';
+
+const photos = [
+  { src: '/kamogawa.jpg', title: '鴨川', camera: 'Canon FTb', date: 'Nov 2025' },
+  { src: '/chita-street.jpg', title: '知らない街で記憶を辿る旅', camera: 'Canon FTb', date: 'Oct 2025' },
+  { src: '/chita-sun.jpg', title: '知らない街で記憶を辿る旅', camera: 'Canon FTb', date: 'Oct 2025' },
+  { src: '/chinatown-sunset.jpg', title: 'Sunset in Chinatown', camera: 'Canon FTb', date: 'Sep 2025' },
+  { src: '/chinatown-tower.jpg', title: 'Tower of Chinatown', camera: 'Canon FTb', date: 'Sep 2025' },
+  { src: '/chicago-chinatown-street.jpg', title: 'Chinatown in Chicago', camera: 'Canon FTb', date: 'Sep 2025' },
+  { src: '/chicago-buildings.jpg', title: 'Buildings in Chicago', camera: 'Canon FTb', date: 'Sep 2025' },
+  { src: '/bag-on-trash-can.jpg', title: 'Can not throw away', camera: 'Canon FTb', date: 'Sep 2025' },
+  { src: '/chicago-crossroad.jpg', title: 'Walking around Chicago', camera: 'Canon FTb', date: 'Sep 2025' },
+  { src: '/chicago-dancing-people.jpg', title: 'People in Grant Park', camera: 'Canon FTb', date: 'Sep 2025' },
+  { src: '/chicago-fountain-and-buildings.jpg', title: 'Grant Park in Chicago', camera: 'Canon FTb', date: 'Sep 2025' },
+  { src: '/chicago-fountain.jpg', title: 'Fountain', camera: 'Canon FTb', date: 'Sep 2025' },
+  { src: '/chicago-ladder.jpg', title: 'Sunlight on Ladder', camera: 'Canon FTb', date: 'Sep 2025' },
+  { src: '/chicago-park-fountain.jpg', title: 'Samon City', camera: 'Canon FTb', date: 'Sep 2025' },
+  { src: '/chicago-park-statue-sky.jpg', title: 'At Lincoln Park', camera: 'Canon FTb', date: 'Sep 2025' },
+  { src: '/green-mill.jpg', title: 'Green Mill', camera: 'Canon FTb', date: 'Sep 2025' },
+  { src: '/chicago-record-shop.jpg', title: 'Record Store', camera: 'Canon FTb', date: 'Sep 2025' },
+  { src: '/chicago-river-reflect.jpg', title: 'Windy City', camera: 'Canon FTb', date: 'Sep 2025' },
+  { src: '/chicago-river.jpg', title: 'Chicago River', camera: 'Canon FTb', date: 'Sep 2025' },
+  { src: '/crowd-in-usa.jpg', title: 'In the Crowd', camera: 'Canon FTb', date: 'Sep 2025' },
+  { src: '/street-wedding-photo.jpg', title: 'Forever Love', camera: 'Canon FTb', date: 'Sep 2025' },
+  { src: '/usa-flag-house.jpg', title: 'We are American', camera: 'Canon FTb', date: 'Sep 2025' },
+  { src: '/pink-flower.jpg', title: 'Entrance', camera: 'Canon FTb', date: 'Aug 2025' },
+  { src: '/stanford-univ-church.jpg', title: 'Justice', camera: 'Canon FTb', date: 'Aug 2025' },
+  { src: '/stanford-univ-pole.jpg', title: 'In Stanford University', camera: 'Canon FTb', date: 'Aug 2025' },
+  { src: '/stanford-univ-statue.jpg', title: 'Regret', camera: 'Canon FTb', date: 'Aug 2025' },
+  { src: '/conference-lunch.jpg', title: 'Hot Chips 2025', camera: 'Canon FTb', date: 'Aug 2025' },
+  { src: '/morning-mortel.jpg', title: 'Early Morning in the Mortel', camera: 'Canon FTb', date: 'Aug 2025' },
+  { src: '/california-seaside.jpg', title: 'California', camera: 'Canon FTb', date: 'Aug 2025' },
+  { src: '/stanford-brigde.jpg', title: 'Golden Gate Bridge', camera: 'Canon FTb', date: 'Aug 2025' },
+  { src: '/garden.jpg', title: 'ここにいるよ', camera: 'Canon FTb', date: 'Aug 2025' },
+  { src: '/market-cups.jpg', title: '夏の夜市', camera: 'Canon FTb', date: 'Aug 2025' },
+  { src: '/atsuta-shrine.jpg', title: '熱田神宮にて', camera: 'Canon FTb', date: 'Aug 2025' },
+  { src: '/inside-the-train.jpg', title: '出国前', camera: 'Canon FTb', date: 'Aug 2025' },
+  { src: '/kantekisho.jpg', title: '監的哨跡', camera: 'Canon FTb', date: 'Jul 2025' },
+  { src: '/kamishima-ship.jpg', title: '太陽の島', camera: 'Canon FTb', date: 'Jul 2025' },
+  { src: '/kamishima.jpg', title: '潮騒', camera: 'Canon FTb', date: 'Jul 2025' },
+  { src: '/mugi2.jpg', title: '太陽が眩しいむぎちゃん', camera: 'Canon FTb', date: 'Jul 2025' },
+  { src: '/mugi.jpg', title: 'あくび', camera: 'Canon FTb', date: 'Jul 2025' },
+  { src: '/agapanthus2.jpg', title: 'Agapanthus', camera: 'Canon FTb', date: 'Jul 2025' },
+  { src: '/agapanthus.jpg', title: 'Agapanthus', camera: 'Canon FTb', date: 'Jul 2025' },
+  { src: '/bison.jpg', title: 'Bison', camera: 'Fujifilm Utsurundesu', date: 'May 2025' },
+  { src: '/higashiyama-zoo.jpg', title: '成人男性3人で東山動物園に行った日', camera: 'Fujifilm Utsurundesu', date: 'May 2025' },
+  { src: '/beginning-cafe.jpg', title: 'はじまり', camera: 'Fujifilm Utsurundesu', date: 'Apr 2025' },
+];
+---
+
+<Layout title="Gallery" subtitle="Fragments of my memory, lovely daily life." description="gallery">
+
+  <div class="grid">
+    {photos.map((photo, i) => (
+      <button class="card" data-index={i} aria-label={photo.title}>
+        <img src={photo.src} alt={photo.title} loading="lazy" />
+        <div class="overlay"></div>
+      </button>
+    ))}
+  </div>
+
+  <!-- Modal -->
+  <div id="modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content">
+      <button id="modal-close" class="modal-close" aria-label="閉じる">&times;</button>
+      <img id="modal-img" src="" alt="" />
+      <div class="modal-info">
+        <p id="modal-title" class="modal-title"></p>
+        <p id="modal-description" class="modal-description"></p>
+        <div id="modal-meta" class="modal-meta"></div>
+      </div>
+    </div>
+  </div>
+
+</Layout>
+
+<script define:vars={{ photos }}>
+  const modal = document.getElementById('modal');
+  const modalImg = document.getElementById('modal-img');
+  const modalTitle = document.getElementById('modal-title');
+  const modalMeta = document.getElementById('modal-meta');
+  const modalClose = document.getElementById('modal-close');
+  const backdrop = modal.querySelector('.modal-backdrop');
+
+  function openModal(index) {
+    const photo = photos[index];
+    modalImg.src = photo.src;
+    modalImg.alt = photo.title;
+    modalTitle.textContent = photo.title;
+
+    const metaParts = [];
+    if (photo.camera) metaParts.push(photo.camera);
+    if (photo.date) metaParts.push(photo.date);
+    modalMeta.textContent = metaParts.join(' / ');
+
+    modal.setAttribute('aria-hidden', 'false');
+    modal.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+    modalClose.focus();
+  }
+
+  function closeModal() {
+    modal.setAttribute('aria-hidden', 'true');
+    modal.classList.remove('is-open');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.card').forEach((card) => {
+    card.addEventListener('click', () => openModal(Number(card.dataset.index)));
+  });
+
+  modalClose.addEventListener('click', closeModal);
+  backdrop.addEventListener('click', closeModal);
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
+  });
+</script>
+
+<style>
+  /* Responsive grid */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 0.75rem;
+    margin-top: 2rem;
+  }
+
+  @media (max-width: 480px) {
+    .grid {
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 0.5rem;
+    }
+  }
+
+  /* Card */
+  .card {
+    position: relative;
+    cursor: pointer;
+    border: none;
+    padding: 0;
+    background: none;
+    border-radius: 0;
+    overflow: hidden;
+    display: block;
+    width: 100%;
+  }
+
+  .card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0;
+    border-radius: 0;
+    transition: opacity 0.2s ease;
+  }
+
+  .card:hover img,
+  .card:focus img {
+    opacity: 0.85;
+  }
+
+  .overlay {
+    position: absolute;
+    inset: 0;
+  }
+
+  /* Modal */
+  .modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .modal.is-open {
+    display: flex;
+  }
+
+  .modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.72);
+  }
+
+  .modal-content {
+    position: relative;
+    z-index: 1;
+    background: var(--background);
+    border-radius: 0;
+    max-width: min(680px, calc(100vw - 2rem));
+    max-height: calc(100vh - 2rem);
+    overflow-y: auto;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.35);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .modal-content img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 0;
+    margin: 0;
+    max-height: 80vh;
+    object-fit: contain;
+  }
+
+  .modal-info {
+    padding: 1.25em 1.5em 1.5em;
+  }
+
+  .modal-title {
+    font-size: 1em;
+    font-weight: 700;
+    margin: 0 0 0.4em;
+    color: var(--foreground);
+  }
+
+  .modal-meta {
+    font-size: 0.75em;
+    color: var(--accent);
+  }
+
+  .modal-close {
+    position: absolute;
+    top: 0.6em;
+    right: 0.75em;
+    background: rgba(0, 0, 0, 0.45);
+    border: none;
+    color: #fff;
+    font-size: 1.4em;
+    line-height: 1;
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+  }
+
+  .modal-close:hover {
+    background: rgba(0, 0, 0, 0.7);
+  }
+</style>
