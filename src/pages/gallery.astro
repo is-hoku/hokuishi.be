@@ -84,8 +84,13 @@ const photos = [
 
   function openModal(index) {
     const photo = photos[index];
+
+    modalImg.style.opacity = '0';
+    modalImg.onload = () => { modalImg.style.opacity = '1'; };
     modalImg.src = photo.src;
     modalImg.alt = photo.title;
+    if (modalImg.complete) modalImg.style.opacity = '1';
+
     modalTitle.textContent = photo.title;
 
     const metaParts = [];
@@ -204,6 +209,7 @@ const photos = [
     margin: 0;
     max-height: 80vh;
     object-fit: contain;
+    transition: opacity 0.15s ease;
   }
 
   .modal-info {
